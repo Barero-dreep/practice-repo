@@ -1,24 +1,13 @@
-# Prerequisites
-*.d
-
 # Compiled Object files
 *.slo
 *.lo
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
@@ -30,3 +19,30 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio files
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.pdb
+
+# GLEW
+glew32.lib
+
+# Generated files
+/bin/
+/build/
+
+# IDE-specific files
+*.user
+*.suo
+*.ncb
+*.aps
+*.opensdf
+*.sdf
+*.sln.docstates
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
