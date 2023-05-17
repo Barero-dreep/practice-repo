@@ -49,6 +49,7 @@ Thumbs.db
 
 #LeetCodeSolutions
 LeetCodeSolutions/*/.vs/
+LeetCodeSolutions/*/x??/
 LeetCodeSolutions/*/*.sln
 LeetCodeSolutions/*/*.vcxproj
 LeetCodeSolutions/*/*.vcxproj.filters
