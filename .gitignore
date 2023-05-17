@@ -22,10 +22,10 @@
 
 # Visual Studio files
 .vs/
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.pdb
+#*.sln
+#*.vcxproj
+#*.vcxproj.filters
+#*.pdb
 
 # GLEW
 glew32.lib
@@ -46,3 +46,10 @@ glew32.lib
 # Miscellaneous
 .DS_Store
 Thumbs.db
+
+#LeetCodeSolutions
+LeetCodeSolutions/*/.vs/
+LeetCodeSolutions/*/*.sln
+LeetCodeSolutions/*/*.vcxproj
+LeetCodeSolutions/*/*.vcxproj.filters
+LeetCodeSolutions/*/*.pdb
