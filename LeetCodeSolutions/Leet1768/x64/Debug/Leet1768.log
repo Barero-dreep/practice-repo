@@ -1,0 +1,4 @@
+﻿  main.cpp
+D:\myrepos\practice-repo\LeetCodeSolutions\Leet1768\main.cpp(9,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\myrepos\practice-repo\LeetCodeSolutions\Leet1768\main.cpp(9,46): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Leet1768.vcxproj -> D:\myrepos\practice-repo\LeetCodeSolutions\Leet1768\x64\Debug\Leet1768.exe
