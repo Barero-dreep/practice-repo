@@ -22,7 +22,7 @@
 
 # Visual Studio files
 .vs/
-x??/Debug/
+x??/Debug/*
 #*.sln
 #*.vcxproj
 #*.vcxproj.filters
