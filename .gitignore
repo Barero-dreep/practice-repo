@@ -22,13 +22,11 @@
 
 # Visual Studio files
 .vs/
+x??/Debug/
 #*.sln
 #*.vcxproj
 #*.vcxproj.filters
 #*.pdb
-
-# GLEW
-glew32.lib
 
 # Generated files
 /bin/
