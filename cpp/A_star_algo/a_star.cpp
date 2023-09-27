@@ -8,7 +8,9 @@ std::ostream& Map::displayMap(std::ostream& os) {
     size_t cols = getWidth();
 
     for (size_t i = 0; i < rows; i++) {
+        // Printing columns
         for (size_t j = 0u; j < cols; j++) {
+            
             switch (m_map[i][j]) 
             {
             default:
@@ -33,6 +35,7 @@ std::ostream& Map::displayMap(std::ostream& os) {
             os << ((j != cols - 1) ? "|" : "\n");
         }
 
+        // Printing row border
         if (i != rows - 1) {
             for (size_t j = 0u; j < cols; j++)
                 os << "- ";
@@ -42,6 +45,14 @@ std::ostream& Map::displayMap(std::ostream& os) {
     return os;
 }
 
+size_t Map::getHeight() const{
+    return height;
+}
+
+size_t Map::getWidth() const {
+    return width;
+}
+
 Map& Map::changeValueAtPoint(const Point& point, int value) {
     if (isValid(point)) {
         m_map[point.row][point.column] = value;
@@ -49,7 +60,6 @@ Map& Map::changeValueAtPoint(const Point& point, int value) {
     return *this;
 }
 
-// Doesn't display 1 or 2 or 3
 Map& Map::changeValueAtPoint(const Point& from, const Point& to, int value) {
     int row = from.row;
     int col = from.column;
@@ -101,10 +111,11 @@ double Path::heuristics(const Point& p1, const Point& p2) {
                 pow(p2.column - p1.column, 2));
 }
 
+
 Path& Path::tracePath(Cell cells[][MAP_COLS], const Point& start, const Point& end) {
     Point p = end;
 
-    while (!(cells[p.row][p.column].parent == p)) {
+    while (cells[p.row][p.column].parent != p) {
         this->addPoint(p);
 
         p = cells[p.row][p.column].parent;
@@ -117,6 +128,7 @@ Path& Path::tracePath(Cell cells[][MAP_COLS], const Point& start, const Point& e
 }
 
 Path& Path::aStarAlgo(const Map& map, const Point& start, const Point& dest, bool allowAllDirs) {
+    // Base cases
     if (!map.isValid(start)) {
         std::cout << "Start point is not a valid point\n";
         return *this;
@@ -141,8 +153,8 @@ Path& Path::aStarAlgo(const Map& map, const Point& start, const Point& dest, boo
         std::cout << "We are already at destenation\n";
         return *this;
     }
-      
-    // curr version needs constants run this stuff
+    
+    // curr version needs constants to run.
     bool closedList[MAP_ROWS][MAP_COLS]{false};
     Cell cells[MAP_ROWS][MAP_COLS];
     
@@ -177,6 +189,7 @@ Path& Path::aStarAlgo(const Map& map, const Point& start, const Point& dest, boo
 
         for (int row = -1; row <= 1; row++) {
             for (int col = -1; col <= 1; col++) {
+                // Check if we can move vertically and horizontaly
                 if (!allowAllDirs && ((row == 0 && col == 0) || (row != 0 && col != 0)))
                     continue;
 
@@ -190,7 +203,7 @@ Path& Path::aStarAlgo(const Map& map, const Point& start, const Point& dest, boo
                         cells[iNew][jNew].parent.row = i;
                         cells[iNew][jNew].parent.column = j;
                         
-                        std::cout << "Path was found!\n";
+                        // std::cout << "Path was found!\n";
                         
                         return this->tracePath(cells, start, dest);
                     }
@@ -228,11 +241,12 @@ void displayPathOnMap(const Map& map, const Path& path) {
             return;
         }
 
-    // Writting an path into newMap
+    // Writting a path into newMap
     newMap.changeValueAtPoint(path[0], Constraints::start);
     for (size_t i = 1; i < sizeOfPath - 1; i++)
         newMap.changeValueAtPoint(path[i], Constraints::path);
     newMap.changeValueAtPoint(path[sizeOfPath - 1], Constraints::destination);
 
+    // Displaying actual map
     newMap.displayMap() << std::endl;
 }
