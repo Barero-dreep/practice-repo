@@ -19,11 +19,6 @@ enum Constraints
 	destination
 };
 
-#define WALL 1
-#define PATH 2
-#define START 3
-#define DEST 4
-
 #include <iostream>
 
 #include <vector>
