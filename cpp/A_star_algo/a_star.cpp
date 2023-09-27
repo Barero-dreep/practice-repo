@@ -1,7 +1,7 @@
 // Done by Vladyslav Savchyn
 // on 2023-06-06
 
-#include "a_star.h"
+#include "a_star.hpp"
 
 std::ostream& Map::displayMap(std::ostream& os) {
     size_t rows = getHeight();

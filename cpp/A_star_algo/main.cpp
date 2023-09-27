@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-#include "a_star.h"
+#include "a_star.hpp"
 
 int main() {
 	Map map;

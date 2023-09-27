@@ -1,8 +1,17 @@
 // Done by Vladyslav Savchyn
 // 2023-09-26
 
-#ifndef A_STAR_H
-#define A_STAR_H
+#include <iostream>
+
+#include <vector>
+
+#include <cmath>
+#include <float.h>
+
+#include <algorithm>
+
+#ifndef A_STAR_HPP
+#define A_STAR_HPP
 
 // Current demo will only work with the values up to 150u
 // If we give more, the compiler gives stack overflow error
@@ -20,15 +29,6 @@ enum Constraints
 	start,
 	destination
 };
-
-#include <iostream>
-
-#include <vector>
-
-#include <cmath>
-#include <float.h>
-
-#include <algorithm>
 
 // Point in space that can hold in which row and column it is
 struct Point {
